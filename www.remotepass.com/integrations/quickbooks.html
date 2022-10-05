@@ -1,0 +1,565 @@
+<!DOCTYPE html><!-- This site was created in Webflow. http://www.webflow.com --><!-- Last Published: Wed Apr 27 2022 11:18:32 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="www.remotepass.com" data-wf-page="61ffb9bf6c9c4f5cac87f02c" data-wf-site="60e6dc45a4d62517ed5a669f" data-wf-status="1">
+<!-- Mirrored from www.remotepass.com/integrations/quickbooks by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Apr 2022 19:17:22 GMT -->
+<head><meta charset="utf-8"/><title>RemotePass</title><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="uEiKPKpzG90qxEJFNenpmD9k_sq7tkv25y8xLmjcuG8" name="google-site-verification"/><meta content="Webflow" name="generator"/><link href="../../assets.website-files.com/60e6dc45a4d62517ed5a669f/css/remotepass-v2.webflow.eaaf37add.css" rel="stylesheet" type="text/css"/><script src="../../ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script><script type="text/javascript">WebFont.load({  google: {    families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic","Inter:regular,500,600,700,800,900"]  }});</script><!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif]--><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="../../assets.website-files.com/60e6dc45a4d62517ed5a669f/61323ef0895fd0345442c518_ofavicon.png" rel="shortcut icon" type="image/x-icon"/><link href="../../assets.website-files.com/60e6dc45a4d62517ed5a669f/61323f2e1a35c94c4716ecb1_favicon.png" rel="apple-touch-icon"/><link href="quickbooks.html" rel="canonical"/><script type="text/javascript">!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.agent='plwebflow';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','../../connect.facebook.net/en_US/fbevents.js');fbq('init', '290249389277443');fbq('track', 'PageView');</script><script type="text/javascript">
+_linkedin_partner_id = "2715746";
+window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script>
+<script  type="fs-cc" fs-cc-categories="marketing">
+(function(){var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript";b.async = true;
+b.src = "../../snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);})();
+</script>
+<!-- Finsweet Cookie Consent -->
+<script async src="../../cdn.jsdelivr.net/npm/%40finsweet/cookie-consent%401/fs-cc.js" fs-cc-mode="opt-in"></script>
+
+<link rel="stylesheet" href="../../unpkg.com/swiper%408.1.4/swiper-bundle.min.css">
+<script src="../../unpkg.com/swiper%408.1.4/swiper-bundle.min.js"></script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KBBM9MP');</script>
+<!-- End Google Tag Manager -->
+
+<meta name="facebook-domain-verification" content="cwz2373lqzrtz86tvpcm8oz13ba4en" />
+
+<script>
+var Webflow = Webflow || [];
+  
+Webflow.push(function () {
+  
+  $(document).ready(function() {
+    
+    $src = null;
+    
+    /*__ reset iframe source __*/
+    $(".video-palyer-modal iframe").attr("src",$src);
+ 
+    /*__ video-palyer btn click __*/
+    $(document).on("click",".video-player",function(){
+    	$src = $(this).attr("alt");
+        var regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+        var match = $src.match(regExp);
+        if (match && match[2].length == 11) {
+          $src = "https://www.youtube.com/embed/"+match[2];
+        } else {
+          $src = String($src).replace("https://www.youtube.com/watch?v=","https://www.youtube.com/embed/");
+        }
+      	console.log("src regExp =>",$src);
+      	$(".video-palyer-modal").css("display","flex");
+        $(".video-palyer-modal").css("opacity",0);
+      	setTimeout(function(){
+          $(".video-palyer-modal").css({"opacity":1,"transition":"opacity .25s ease-in"});
+        },.25);
+      	$(".video-palyer-modal iframe").attr("src",$src+"?autoplay=1&mute=0");
+      	$(".video-palyer-modal iframe").attr("allow","autoplay; encrypted-media");
+      	$(".video-palyer-modal iframe").attr("allowfullscreen","true");
+     
+    });
+    
+    /*__ player-mask click __*/
+    $(document).on("click",".player-mask",function(){
+      $(this).find(".video-player").trigger("click");
+    });
+    
+    /*__ video-palyer-modal btn click __*/
+    $(document).on("click",".video-palyer-modal",function(){
+      	$(".video-palyer-modal").css("display","none");
+      	$(".video-palyer-modal").css("opacity",0);
+     	$(".video-palyer-modal iframe").attr("src",$src);
+    });
+    
+    /*__ video-palyer-modal iframe click stop propagation __*/
+    $(document).on("click",".video-palyer-modal iframe",function(event){
+      event.preventDefault();
+    });
+    
+    /*__ more_integration btn click __*/
+    $(document).on("click",".more_intergrations",function(){
+      	$(".integration_item").css("display","flex");
+      	$(this).css("display","none");
+    });
+    
+    /*********************************/
+    
+    /*__ max integration_item __*/
+    
+    var heights = $(".integration_item").map(function(){
+        return $(this).height();
+    }).get();
+    maxHeight = Math.max.apply(null, heights);
+  
+    $(".integration_item").css({"display":"none","opacity":1,"min-height":maxHeight+"px"});
+    $(".more_intergrations").css("display","flex");
+    
+    
+    if( $(".integration_item").length > 2 ){
+      
+      $(".integration_item").each(function(ind){
+          if(ind < 2){
+           $(this).css("display","flex");
+          }
+      })
+      
+    }else{
+      $(".integration_item").css("display","flex");
+    }
+    
+    $(".intergrations-container").css({"opacity":"1","transition":"opacity .25s ease-in"});
+    
+  });
+  
+  /*__ max video-item-container __*/ 
+  
+  function maxHeightCal(elm){
+    var maxHeight = Math.max.apply(null, $(elm).map(function (){
+      return $(this).height();
+    }).get());
+    $(elm).css("cssText","min-height:"+maxHeight+"px");
+  }
+  
+  maxHeightCal(".video-item-container");
+  
+  $(window).resize(function(){
+    maxHeightCal(".video-item-container");
+  });
+  
+});
+</script>
+
+<script type="text/javascript">window.__WEBFLOW_CURRENCY_SETTINGS = {"currencyCode":"USD","$init":true,"symbol":"$","decimal":".","fractionDigits":2,"group":",","template":"{{wf {\"path\":\"symbol\",\"type\":\"PlainText\"} }} {{wf {\"path\":\"amount\",\"type\":\"CommercePrice\"} }} {{wf {\"path\":\"currencyCode\",\"type\":\"PlainText\"} }}","hideDecimalForWholeNumbers":false};</script></head><body><div data-animation="default" class="navbar dark_bg w-nav" data-easing2="ease-in" data-easing="ease" data-collapse="medium" data-w-id="c4253753-b1fe-f6d4-559c-4c21dd6edd4b" role="banner" data-no-scroll="1" data-duration="400" data-doc-height="1"><div class="nav-container-2"><a href="../index.html" class="brand w-nav-brand"><img src="../../assets.website-files.com/60e6dc45a4d62517ed5a669f/60e6dc45a4d62531d55a688f_RemotePass-white.png" width="213" alt="logo" sizes="(max-width: 479px) 100vw, (max-width: 767px) 35vw, 213px" srcset="https://assets.website-files.com/60e6dc45a4d62517ed5a669f/60e6dc45a4d62531d55a688f_RemotePass-white-p-500.png 500w, https://assets.website-files.com/60e6dc45a4d62517ed5a669f/60e6dc45a4d62531d55a688f_RemotePass-white-p-800.png 800w, https://assets.website-files.com/60e6dc45a4d62517ed5a669f/60e6dc45a4d62531d55a688f_RemotePass-white-p-1080.png 1080w, https://assets.website-files.com/60e6dc45a4d62517ed5a669f/60e6dc45a4d62531d55a688f_RemotePass-white-p-1600.png 1600w, https://assets.website-files.com/60e6dc45a4d62517ed5a669f/60e6dc45a4d62531d55a688f_RemotePass-white-p-2000.png 2000w, https://assets.website-files.com/60e6dc45a4d62517ed5a669f/60e6dc45a4d62531d55a688f_RemotePass-white.png 2230w" class="logo"/><img src="../../assets.website-files.com/60e6dc45a4d62517ed5a669f/60e6dc45a4d62531d55a688f_RemotePass-white.png" width="152" alt="logo" sizes="(max-width: 479px) 100vw, 152px" srcset="https://assets.website-files.com/60e6dc45a4d62517ed5a669f/60e6dc45a4d62531d55a688f_RemotePass-white-p-500.png 500w, https://assets.website-files.com/60e6dc45a4d62517ed5a669f/60e6dc45a4d62531d55a688f_RemotePass-white-p-800.png 800w, https://assets.website-files.com/60e6dc45a4d62517ed5a669f/60e6dc45a4d62531d55a688f_RemotePass-white-p-1080.png 1080w, https://assets.website-files.com/60e6dc45a4d62517ed5a669f/60e6dc45a4d62531d55a688f_RemotePass-white-p-1600.png 1600w, https://assets.website-files.com/60e6dc45a4d62517ed5a669f/60e6dc45a4d62531d55a688f_RemotePass-white-p-2000.png 2000w, https://assets.website-files.com/60e6dc45a4d62517ed5a669f/60e6dc45a4d62531d55a688f_RemotePass-white.png 2230w" class="dark_logo"/></a><div class="ecommerce_and_menu_wrap-2"><nav role="navigation" class="nav-menu-4 w-nav-menu"><div class="nav_links_wrapper-3"><div data-delay="0" data-hover="true" data-w-id="ffbf5e50-0ee3-379c-e2ad-b2407a6e4092" class="dropdown w-dropdown"><div class="dropdown-toggle dark_bg w-dropdown-toggle"><div class="mega_nav_pointer-2"></div><div>Product</div></div><nav class="dropdown-list-3 w-dropdown-list"><div class="container mega_nav_container"><div class="mega-menu-main-content"><div class="w-layout-grid _2_col_grid-3 mega_nav_links"><a href="../mass-payroll" class="mega_nav_link-2 w-inline-block"><div class="mega_nav_icon_wrap-2"><img src="https://assets.website-files.com/60e6dc45a4d62517ed5a669f/60e6dc45a4d62559e45a684f_Applications and Programming_app_apps_applications_tile_add.svg" width="23" alt=""/></div><div class="written_content"><h4 class="no_margin-2">Mass Payroll</h4><p class="paragraph-14">Cross-border mass payroll for 130+ countries with a single click</p></div></a><a href="../electronic-signature" class="mega_nav_link-2 w-inline-block"><div class="mega_nav_icon_wrap-2"><img src="https://assets.website-files.com/60e6dc45a4d62517ed5a669f/60e6dc45a4d62559e45a684f_Applications and Programming_app_apps_applications_tile_add.svg" width="23" alt=""/></div><div class="written_content"><h4 class="no_margin-2">Invoices</h4><p>Instant invoice generation with easy integration with Xero &amp; Quickbooks</p></div></a><a href="../compliance" class="mega_nav_link-2 w-inline-block"><div class="mega_nav_icon_wrap-2"><img src="https://assets.website-files.com/60e6dc45a4d62517ed5a669f/60e6dc45a4d62559e45a684f_Applications and Programming_app_apps_applications_tile_add.svg" width="23" alt=""/></div><div class="written_content"><h4 class="no_margin-2">e-Signature</h4><p class="paragraph-13">Fully embedded, Secure &amp; Legally binding e-signature technology</p></div></a><a href="../contract-editor" class="mega_nav_link-2 w-inline-block"><div class="mega_nav_icon_wrap-2"><img src="https://assets.website-files.com/60e6dc45a4d62517ed5a669f/60e6dc45a4d62559e45a684f_Applications and Programming_app_apps_applications_tile_add.svg" width="23" alt=""/></div><div class="written_content"><h4 class="no_margin-2">Contract editor</h4><p>Smart contract editor to customize contracts to your needs</p></div></a><a href="../old/integrations-old.html" class="mega_nav_link-2 w-inline-block"><div class="mega_nav_icon_wrap-2"><img src="https://assets.website-files.com/60e6dc45a4d62517ed5a669f/60e6dc45a4d62559e45a684f_Applications and Programming_app_apps_applications_tile_add.svg" width="23" alt=""/></div><div class="written_content"><h4 class="no_margin-2">Compliance</h4><p>Compliant contracts in 100+ countries with KYC verification </p></div></a><a href="#" class="mega_nav_link-2 w-inline-block"><div class="mega_nav_icon_wrap-2"><img src="https://assets.website-files.com/60e6dc45a4d62517ed5a669f/60e6dc45a4d62559e45a684f_Applications and Programming_app_apps_applications_tile_add.svg" width="23" alt=""/></div><div class="written_content"><h4 class="no_margin-2">Global employment</h4><p>Hire FTEs globally and we act as the Employee of Record</p></div></a></div></div></div></nav></div><a href="../old-home-3.html" class="nav_link-2 dark_bg w-inline-block"><div>Companies</div></a><a href="../pricing.html" class="nav_link-2 dark_bg w-inline-block"><div>Pricing</div></a><a href="../blog.html" class="nav_link-2 dark_bg w-inline-block"><div>Blog</div></a><a href="https://app.remotepass.com/" class="nav_link-2 dark_bg w-inline-block"><div>Login</div></a></div></nav><div data-w-id="ffbf5e50-0ee3-379c-e2ad-b2407a6e40d9" class="hamburger_wrap-3"><div data-w-id="ffbf5e50-0ee3-379c-e2ad-b2407a6e40da" class="hamburger_line-2 white_line"></div><div data-w-id="ffbf5e50-0ee3-379c-e2ad-b2407a6e40db" class="hamburger_line-2 white_line"></div><div data-w-id="ffbf5e50-0ee3-379c-e2ad-b2407a6e40dc" class="hamburger_line-2 white_line"></div></div></div><a href="../demo" class="outlined_button-3 on_dark_bg_navbar1 w-button">Get started  ➝</a></div><div class="mobile_menu"><div class="mobile_menu_content-2"><nav class="mobile-links-wrap-2"><div class="mobile-nav-link-contain-2 expand"><a href="../old-home-3.html" class="mobile-nav-link w-inline-block"><h3 class="heading-34">Companies</h3></a></div><div class="mobile-nav-link-contain-2 expand"><a href="../old/pricing-old" class="mobile-nav-link w-inline-block"><h3 class="heading-34">Pricing</h3></a></div><div class="mobile-nav-link-contain-2 expand"><a href="../blog.html" class="mobile-nav-link w-inline-block"><h3 class="heading-34">Blog</h3></a></div><div class="mobile-nav-link-contain-2 expand"><a href="https://app.remotepass.com/" class="mobile-nav-link w-inline-block"><h3 class="heading-34">Login</h3></a></div></nav></div></div></div><div class="section integrations-hero wf-section"><div class="container top_padding_20"><h2 class="white_text align_center">Integrate RemotePass with Quickbook</h2><p class="sub_heading">Automatically sync invoices with Quickbooks</p><div class="integration-circles-wrap"><div class="integration-circle"><img width="80" src="../../assets.website-files.com/60e6dc45a4d62517ed5a669f/60e6dc45a4d625ba355a68bc_RP-Icon-Blue-256.png" alt="" class="integrations-icon"/></div><div class="integration-circle taas-circle"><img width="81" src="../../assets.website-files.com/60e6dc45a4d62517ed5a669f/60e6dc45a4d6253ae85a68bf_qb_thumb.png" alt="" class="taas-icon"/></div></div></div></div><div class="section wf-section"><div class="container"><div class="breadcrumbs on-integrations-template"><a href="../old/integrations-old.html" class="breadcrumb">Integrations</a><div class="breadcrumb_arrow">→</div><div class="w-dyn-list"><div role="list" class="w-dyn-items"><div role="listitem" class="w-dyn-item"><a href="quickbooks.html" aria-current="page" class="breadcrumb w--current">Quickbooks</a></div></div></div></div><div class="rich-text w-richtext"><h2><strong>RemotePass Integration with QuickBooks </strong></h2><p>Via our one-click integration with QuickBooks, you can automatically sync your invoices with your QuickBooks account. Once you make a payment, an invoice is generated and will be reflected in your QuickBooks Online.</p><p><br/></p><p>‍</p></div></div></div><div class="section grey-bg wf-section"><div class="section-heading-contain _600px"><h2 class="heading-62">Get started today</h2><p class="paragraph-11">Sign up for your free demo today! <br/></p><div class="email-form-block w-form"><form id="email-form" name="email-form" data-name="Email Form" method="get" class="form_l2"><input type="email" class="text-field w-input" maxlength="256" name="email-3" data-name="Email 3" placeholder="Your email address" id="email-3" required=""/><input type="submit" value="get started  ➝" data-wait="Please wait..." class="submit-button l2_submit_button w-button"/></form><div class="w-form-done"><div>Thank you! Your submission has been received!</div></div><div class="w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div></div></div></div><div class="section footer_section wf-section"><div class="container"><div data-w-id="8dcc93f0-bcd1-d7d5-2398-b5601542998a" class="footer_cta_wrap"><div class="max_300px"><div class="social_links_wrapper justify_start"><a href="https://www.linkedin.com/company/remotepass" target="_blank" class="social_link first-link w-inline-block"><img src="../../assets.website-files.com/60e6dc45a4d62517ed5a669f/60e6dc45a4d62573015a66fc_linkedin-icon-png-transparent-background-5.png" width="18" sizes="(max-width: 479px) 100vw, (max-width: 767px) 18px, (max-width: 991px) 2vw, (max-width: 1919px) 18px, 1vw" srcset="https://assets.website-files.com/60e6dc45a4d62517ed5a669f/60e6dc45a4d62573015a66fc_linkedin-icon-png-transparent-background-5-p-500.png 500w, https://assets.website-files.com/60e6dc45a4d62517ed5a669f/60e6dc45a4d62573015a66fc_linkedin-icon-png-transparent-background-5.png 609w" alt=""/></a><a href="https://twitter.com/RemotePassCom" target="_blank" class="social_link w-inline-block"><img src="../../assets.website-files.com/60e6dc45a4d62517ed5a669f/60e6dc45a4d6250c635a66fb_twitter.png" width="18" alt=""/></a></div></div><div class="footer_buttons_contain"><a href="../demo-request.html" target="_blank" class="button display_block w-button">Schedule a demo<span class="button_arrow"></span></a></div></div><div class="w-layout-grid _4_col_grid"><div data-w-id="8dcc93f0-bcd1-d7d5-2398-b560154299b0" class="footer_column"><div class="footer_title white_text">Company</div><a href="https://jobs.gohire.io/remotepass-mpsjs8q1/" target="_blank" class="footer_link">Jobs</a><a href="../blog.html" class="footer_link">Blog</a><a href="../pricing.html" class="footer_link">Pricing</a></div><div data-w-id="8dcc93f0-bcd1-d7d5-2398-b560154299c5" class="footer_column"><div class="footer_title white_text">Legal</div><a href="../terms.html" class="footer_link">Terms of Service</a><a href="../privacy.html" class="footer_link">Privacy Policy</a><a href="../policy.html" class="footer_link">Acceptable Use Policy</a></div></div><div class="copy_rights_contain"><div data-w-id="8dcc93f0-bcd1-d7d5-2398-b560154299d9" class="copyrights">Copyright @2021 RemotePass, Inc. All rights reserved</div></div></div></div><script src="../../d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c83064.js?site=60e6dc45a4d62517ed5a669f" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script><script src="../../assets.website-files.com/60e6dc45a4d62517ed5a669f/js/webflow.7deb99d39.js" type="text/javascript"></script><!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]--><style>
+
+.w-webflow-badge{
+  display:none !important;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+</style>
+<script>
+  $(".bg-video-mask video").each(function(){
+    var mv = this;
+  mv.setAttribute("playsinline", "");
+  mv.setAttribute("muted", "");
+    this.play();
+  });
+  $(".bg-video-mask").click(function(){
+    
+    $("video",this)[0].play();
+    
+  });
+</script>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBBM9MP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<script>
+<!-- EMAIL DOMAINS TO BLOCK -->
+var emailList = /^([\w-\.]+@(?!gmail.com)(?!yahoo.com)(?!hotmail.com)(?!aol.com)(?!hotmail.co.uk)(?!hotmail.fr)(?!msn.com)(?!yahoo.fr)(?!wanadoo.fr)(?!orange.fr)(?!comcast.net)(?!yahoo.co.uk)(?!yahoo.com.br)(?!yahoo.co.in)(?!live.com)(?!rediffmail.com)(?!free.fr)(?!gmx.de)(?!web.de)(?!yandex.ru)(?!ymail.com)(?!libero.it)(?!outlook.com)(?!uol.com.br)(?!bol.com.br)(?!mail.ru)(?!cox.net)(?!hotmail.it)(?!sbcglobal.net)(?!sfr.fr)(?!live.fr)(?!verizon.net)(?!live.co.uk)(?!googlemail.com)(?!yahoo.es)(?!ig.com.br)(?!live.nl)(?!bigpond.com)(?!terra.com.br)(?!yahoo.it)(?!neuf.fr)(?!yahoo.de)(?!alice.it)(?!rocketmail.com)(?!att.net)(?!laposte.net)(?!facebook.com)(?!bellsouth.net)(?!yahoo.in)(?!hotmail.es)(?!charter.net)(?!yahoo.ca)(?!yahoo.com.au)(?!rambler.ru)(?!hotmail.de)(?!tiscali.it)(?!shaw.ca)(?!yahoo.co.jp)(?!sky.com)(?!earthlink.net)(?!optonline.net)(?!freenet.de)(?!t-online.de)(?!aliceadsl.fr)(?!virgilio.it)(?!home.nl)(?!qq.com)(?!telenet.be)(?!me.com)(?!yahoo.com.ar)(?!tiscali.co.uk)(?!yahoo.com.mx)(?!voila.fr)(?!gmx.net)(?!mail.com)(?!planet.nl)(?!tin.it)(?!live.it)(?!ntlworld.com)(?!arcor.de)(?!yahoo.co.id)(?!frontiernet.net)(?!hetnet.nl)(?!live.com.au)(?!yahoo.com.sg)(?!zonnet.nl)(?!club-internet.fr)(?!juno.com)(?!optusnet.com.au)(?!blueyonder.co.uk)(?!bluewin.ch)(?!skynet.be)(?!sympatico.ca)(?!windstream.net)(?!mac.com)(?!centurytel.net)(?!chello.nl)(?!live.ca)(?!aim.com)(?!bigpond.net.au)([\w-]+\.)+[\w-]{2,4})?$/
+
+<!-- ALERT MESSAGE TO BE SHOWN -->
+var emailAlert = 'Please input a valid work email address (not a Gmail, Outlook, Yahoo, etc.)'
+
+<!-- VALIDATion -->
+$('input[type=submit]').click(function() {
+  $("input[type=email]").each(function() {
+    var email = $(this).val().toLowerCase();
+    if (emailList.test(email)) {
+    (this).setCustomValidity('');
+    } else {
+      (this).setCustomValidity(emailAlert);
+    }
+  })
+});
+
+<!-- PREVENTS ALERT FROM APPEARING WITH EACH KEYPRESS -->
+$('input[type=email]').on('input', function() {
+  (this).setCustomValidity('');
+});
+  
+
+<!-- TAX CALCULATION LOGIC -->
+
+  var Webflow = Webflow || [];
+  
+  Webflow.push(function () {
+
+        var $country  = "GB";
+        var $salary   = "50000";
+        var $currency = "USD";
+        var $countries_data = {};
+
+        var pageUrl= location.href;
+        var castedPageUrl= pageUrl.toLowerCase();
+
+        if(castedPageUrl.indexOf('../country/index.html') != -1){
+
+            console.log("welcome to country details page");
+
+            $("#Tax_Calculation_Currency").css("opacity","0");
+            $("#Tax_Calculation_Country").css("opacity","0");
+            $("#Tax_Calculation_Salary").css("opacity","0");
+            $("#Tax_Calculation_Salary").val($salary);
+             
+            //$("#Tax_Calculation_Currency").text(extractCurrency(String($("#Tax_Calculation_Currency").text()).split('(')));
+
+            $(".tax_dropdown_list_text_only").each((ind,elem)=>{
+              $(elem).text(extractCurrency(String($(elem).text()).split('(')));
+            });
+
+            /***** Set Country Params ******/
+            $country  = $("#Tax_Calcution_Country_Code_Hidden").text();
+            $currency = $("#Tax_Calculation_Currency").text();
+
+            /***** opacity ******/
+            $("#Tax_Calculation_Currency").css("opacity","1");
+            $("#Tax_Calculation_Country").css("opacity","1");
+            $("#Tax_Calculation_Salary").css("opacity","1");
+
+            /*** reset Fields ****/
+            resetFields();
+
+            /*** fetch Data ****/
+            inputChanged();
+
+        }
+
+        /********* .Country_Nav_Content form *****************/
+
+        $("form[name='email-form']").submit(function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        });
+        
+        /********* tax_dropdown_list_image_text_container *****************/
+
+        $(".tax_dropdown_list_image_text_container").on("click",function(e){
+
+          $(".tax_dropdown_list").removeClass("w--open");
+          $(".tax_dropdown_list").attr("aria-expanded","false");
+
+          /** update country input *******/
+
+          $("#Tax_Calcution_Country_Code_Hidden").text($(this).find(".tax_dropdown_list_item_code_hidden").text());
+          $(".tax_dropdown_text_input_image").attr("src",$(this).find(".tax_dropdown_list_image").attr("src"));
+          $(".tax_dropdown_text_input_image").attr("srcset",$(this).find(".tax_dropdown_list_image").attr("src"));
+          $(".tax_dropdown_text_input").text($(this).find(".tax_dropdown_list_label").text());
+
+          /*** redirectToUrl ****/
+          redirectToUrl();
+
+          /*** reset Fields ****/
+          resetFields();
+
+          /*** fetch Data ****/
+          inputChanged();
+
+        });
+
+
+        /********* tax_dropdown_list_text_only *****************/
+
+        $(".tax_dropdown_list_text_only").on("click",function(e){
+
+
+          $(".tax_dropdown_currency_list").removeClass("w--open");
+          $(".tax_dropdown_collection_currency_list").attr("aria-expanded","false");
+
+          /** update currency input *******/
+          $("#Tax_Calculation_Currency").text($(this).text());
+
+          /*** redirectToUrl ****/
+          redirectToUrl();
+
+          /*** reset Fields ****/
+          resetFields();
+
+          /*** fetch Data ****/
+          inputChanged();
+
+        });
+
+        /********* tax_dropdown_list_text_only *****************/
+
+        $("#Tax_Calculation_Salary").on("blur",function(e){
+
+           if($("#Tax_Calculation_Salary").val()!=""){
+
+              $("#Tax_Calculation_Salary").css("border","0px solid transparent");
+              /*** redirectToUrl ****/
+              redirectToUrl();
+              /*** fetch Data ****/
+              inputChanged();
+           }else{
+              $("#Tax_Calculation_Salary").css("border","1px solid #d80027");
+           }
+
+        });
+
+        /********* extractCurrency *****************/
+
+        function extractCurrency(text){
+          $text = text;
+          $text = String($text[1]).replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '');
+          return $text
+        }
+
+        /********* inputChanged *****************/
+
+        function inputChanged(){
+
+          $country  = $("#Tax_Calcution_Country_Code_Hidden").text();
+          $currency = $("#Tax_Calculation_Currency").text();
+
+          resetFields();
+
+          if($("#Tax_Calculation_Salary").val()!=""){
+
+              $("#Tax_Calculation_Salary").css("border","0px");
+
+              $country  = $("#Tax_Calcution_Country_Code_Hidden").text();
+              $currency = $("#Tax_Calculation_Currency").text();
+              $salary   = $("#Tax_Calculation_Salary").val();
+
+
+
+              $.ajax({
+                type: 'get',
+                crossDomain: true,
+                    xhrFields: {
+                    withCredentials: true
+                },
+                url: `https://sandbox.remotepass.com/api/eor/quote/export/json/${$salary}/${$country}/${$currency}`,
+                dataType: 'json',
+                success:function(json){
+                    console.log('message: ' + "success"+ JSON.stringify(json));                     
+                },
+                error:function(error){
+                    console.log('message Error' + JSON.stringify(error));
+                }  
+              })
+              .done(function(res){
+
+                console.log("res => ",res);
+
+                if(res.input){
+
+                  $countries_data = res;
+
+                  displayData();
+
+                  $(".tab_content_left_container").css("opacity","1");
+                  $(".tab_content_right_container").css("opacity","1");
+
+                } 
+                else{
+                  console.log(res);
+                }
+              });
+
+          }else{
+            $("#Tax_Calculation_Salary").css("border","1px solid red");
+          }
+
+        }
+
+        /********* displayData *****************/
+
+        function displayData(){
+
+          $currency_code = $countries_data.input.currency.code;
+
+          $currency = $currency_code;
+
+          $alreadyExitLabel = ["cost","gross","total_taxes","net"];
+
+          /**__ Yearly _________________ **/
+
+            /**__ Employer _________________ **/
+
+               $(".tab_content_yearly_container").find(".employer_yearly_cost").text($currency +" "+numberWithCommas($countries_data.employer.cost.annual)).css("opacity","1");
+               $(".tab_content_yearly_container").find(".employer_yearly_gross").text($currency +" "+numberWithCommas($countries_data.employer.gross.annual)).css("opacity","1");
+               $(".tab_content_yearly_container").find(".employer_yearly_tax").text($currency +" "+numberWithCommas($countries_data.employer.total_taxes.annual)).css("opacity","1");
+
+               $tab_content_left_container = '';
+
+               for (const property in $countries_data.employer) {
+                  if(!$alreadyExitLabel.includes(property)){
+                       if($countries_data.employer[property].length){
+                           $countries_data.employer[property].map((currentItem)=>{
+                              for (const currentItemProperty in currentItem) {
+                                $tab_content_left_container+=renderItem(currentItemProperty,currentItem[currentItemProperty].annual,$currency_code);
+                              }
+                           });
+                       }else{
+                           $tab_content_left_container+=renderItem(property,$countries_data.employer[property].annual,$currency_code);
+                       }
+                      
+                  }
+               }
+
+               $(".tab_content_yearly_container").find(".tab_content_left_container .tab_content_footer").html($tab_content_left_container);
+
+            /**__ Employee _________________ **/
+               $(".tab_content_yearly_container").find(".employee_yearly_cost").text($currency +" "+numberWithCommas($countries_data.employee.net.annual)).css("opacity","1");
+               $(".tab_content_yearly_container").find(".employee_yearly_gross").text($currency +" "+numberWithCommas($countries_data.employee.gross.annual)).css("opacity","1");
+               $(".tab_content_yearly_container").find(".employee_yearly_tax").text($currency +" "+numberWithCommas($countries_data.employee.total_taxes.annual)).css("opacity","1");
+
+               $tab_content_right_container = '';
+
+               for (const property in $countries_data.employee) {
+                  if(!$alreadyExitLabel.includes(property)){
+                       if($countries_data.employee[property].length){
+                           $countries_data.employee[property].map((currentItem)=>{
+                              for (const currentItemProperty in currentItem) {
+                                $tab_content_right_container+=renderItem(currentItemProperty,currentItem[currentItemProperty].annual,$currency_code);
+                              }
+                           });
+                       }else{
+                           $tab_content_right_container+=renderItem(property,$countries_data.employee[property].annual,$currency_code);
+                       }
+                      
+                  }
+               }
+
+               $(".tab_content_yearly_container").find(".tab_content_right_container .tab_content_footer").html($tab_content_right_container);
+
+          /**__ Monthly _________________ **/
+
+            /**__ Employer _________________ **/
+               $(".tab_content_monthly_container").find(".employer_monthly_cost").text($currency +" "+numberWithCommas($countries_data.employer.cost.monthly)).css("opacity","1");
+               $(".tab_content_monthly_container").find(".employer_monthly_gross").text($currency +" "+numberWithCommas($countries_data.employer.gross.monthly)).css("opacity","1");
+               $(".tab_content_monthly_container").find(".employer_monthly_tax").text($currency +" "+numberWithCommas($countries_data.employer.total_taxes.monthly)).css("opacity","1");
+
+               $tab_content_left_container = '';
+
+               for (const property in $countries_data.employer) {
+                  if(!$alreadyExitLabel.includes(property)){
+                       if($countries_data.employer[property].length){
+                           $countries_data.employer[property].map((currentItem)=>{
+                              for (const currentItemProperty in currentItem) {
+                                $tab_content_left_container+=renderItem(currentItemProperty,currentItem[currentItemProperty].monthly,$currency_code);
+                              }
+                           });
+                       }else{
+                           $tab_content_left_container+=renderItem(property,$countries_data.employer[property].monthly,$currency_code);
+                       }
+                      
+                  }
+               }
+
+               $(".tab_content_monthly_container").find(".tab_content_left_container .tab_content_footer").html($tab_content_left_container);
+
+            /**__ Employee _________________ **/
+               $(".tab_content_monthly_container").find(".employee_monthly_cost").text($currency +" "+numberWithCommas($countries_data.employee.net.monthly)).css("opacity","1");
+               $(".tab_content_monthly_container").find(".employee_monthly_gross").text($currency +" "+numberWithCommas($countries_data.employee.gross.monthly)).css("opacity","1");
+               $(".tab_content_monthly_container").find(".employee_monthly_tax").text($currency +" "+numberWithCommas($countries_data.employee.total_taxes.monthly)).css("opacity","1");
+
+               $tab_content_right_container = '';
+
+               for (const property in $countries_data.employee) {
+                  if(!$alreadyExitLabel.includes(property)){
+                       if($countries_data.employee[property].length){
+                           $countries_data.employee[property].map((currentItem)=>{
+                              for (const currentItemProperty in currentItem) {
+                                $tab_content_right_container+=renderItem(currentItemProperty,currentItem[currentItemProperty].monthly,$currency_code);
+                              }
+                           });
+                       }else{
+                           $tab_content_right_container+=renderItem(property,$countries_data.employee[property].monthly,$currency_code);
+                       }
+                      
+                  }
+               }
+
+               $(".tab_content_monthly_container").find(".tab_content_right_container .tab_content_footer").html($tab_content_right_container);
+         
+          
+        }
+
+        /********* resetFields *****************/
+
+        function resetFields(){
+
+            /**__ Yearly _________________ **/
+
+            /**__ Employer _________________ **/
+               $(".tab_content_yearly_container").find(".employer_yearly_cost").text("").css("opacity","0");
+               $(".tab_content_yearly_container").find(".employer_yearly_gross").text("").css("opacity","0");
+               $(".tab_content_yearly_container").find(".employer_yearly_tax").text("").css("opacity","0");
+            /**__ Employee _________________ **/
+               $(".tab_content_yearly_container").find(".employee_yearly_cost").text("").css("opacity","0");
+               $(".tab_content_yearly_container").find(".employee_yearly_gross").text("").css("opacity","0");
+               $(".tab_content_yearly_container").find(".employee_yearly_tax").text("").css("opacity","0");
+            /**__ Footer _________________ **/
+            $(".tab_content_yearly_container").find(".tab_content_left_container .tab_content_footer").html("");
+            $(".tab_content_yearly_container").find(".tab_content_right_container .tab_content_footer").html("");
+
+          /**__ Monthly _________________ **/
+
+            /**__ Employer _________________ **/
+               $(".tab_content_monthly_container").find(".employer_monthly_cost").text("").css("opacity","0");
+               $(".tab_content_monthly_container").find(".employer_monthly_gross").text("").css("opacity","0");
+               $(".tab_content_monthly_container").find(".employer_monthly_tax").text("").css("opacity","0");
+            /**__ Employee _________________ **/
+               $(".tab_content_monthly_container").find(".employee_monthly_cost").text("").css("opacity","0");
+               $(".tab_content_monthly_container").find(".employee_monthly_gross").text("").css("opacity","0");
+               $(".tab_content_monthly_container").find(".employee_monthly_tax").text("").css("opacity","0");
+            /**__ Footer _________________ **/
+            $(".tab_content_monthly_container").find(".tab_content_left_container .tab_content_footer").html("");
+            $(".tab_content_monthly_container").find(".tab_content_right_container .tab_content_footer").html("");
+
+        }
+
+        /********* numberWithCommas *****************/
+
+        function numberWithCommas(num) {
+            //return num.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+            return num.toLocaleString('en-US');
+        }
+
+        /********* renderItem *****************/
+
+        function renderItem(Label,Cost,Currency) {
+
+          Cost = numberWithCommas(Cost);
+
+          return `<div class="tab_footer_horizental_container">
+                    <div class="tab_footer_horizental_cost_label">${Label}</div>
+                    <div class="tab_footer_horizental_cost_value employer_yearly_national_insurance">${Currency} ${Cost}</div>
+                  </div>`;
+        }
+
+        /********* numberWithCommas *****************/
+
+        function redirectToUrl() {
+          //console.log("redirectToUrl");
+          //window.location.replace("https://www.remotepass.com/demo-request");
+          //return false;
+        }
+
+  });
+
+<!-- END TAX CALCULATION LOGIC -->
+
+</script></body>
+<!-- Mirrored from www.remotepass.com/integrations/quickbooks by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Apr 2022 19:17:24 GMT -->
+</html>
+
